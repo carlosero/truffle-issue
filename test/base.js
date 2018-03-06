@@ -15,7 +15,7 @@ contract('FirstContract', async (accounts)  => {
 		});
 
 		it("should allow me to move my balance to second contract", async () => {
-			let res = this.firstContract.transfer(this.secondContract.address, 1111111, {from: this.investor});
+			let res = await this.firstContract.transfer(this.secondContract.address, 1111111, {from: this.investor});
             let balance = await this.secondContract.balances.call(this.firstContract.address);
 			assert.equal(balance.valueOf(), 1111111);
 		});
