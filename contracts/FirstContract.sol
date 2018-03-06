@@ -7,8 +7,7 @@ contract FirstContract  {
         balances[msg.sender] = msg.value;
     }
 
-    function transfer(address _to) external {
-    	_to.transfer(balances[msg.sender]);
+    function transfer(address _to, uint256 _amount) external {
+    	_to.transfer(_amount);
     }
-
 }
